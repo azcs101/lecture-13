@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 
 import HomePage from './HomePage';
 import StaticPage from './StaticPage';
+import NotFound from './NotFound';
 
 export default class App extends Component {
     render() {
         return (
             <div>
-                <HomePage />
-                <StaticPage />
                 <nav>
                     <ul>
                         <li>
