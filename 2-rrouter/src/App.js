@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Switch, Link, NavLink } from 'react-router-dom';
 
 import HomePage from './HomePage';
 import StaticPage from './StaticPage';
@@ -8,15 +9,20 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <HomePage />
-                <StaticPage />
+            
+                <Switch>    
+                    <Route path="/static-page" component={StaticPage} />
+                    <Route path="/" component={HomePage} exact />
+                    <Route component={NotFound} />
+                </Switch>
+            
                 <nav>
                     <ul>
                         <li>
-                            <a href="/">Home Page</a>
+                            <NavLink exact activeStyle={{ color: 'red' }} to="/">Home Page</NavLink>
                         </li>
                         <li>
-                            <a href="/static-page">Static Page</a>
+                            <NavLink activeStyle={{ color: 'red' }} to="/static-page">Static Page</NavLink>
                         </li>
                     </ul>
                 </nav>
